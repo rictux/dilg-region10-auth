@@ -1,0 +1,39 @@
+{
+  "name": "@region10/auth",
+  "version": "0.1.0",
+  "description": "Shared Supabase session across *.region10.systems. Cookie storage adapter and sign-in redirect helpers for the DILG Region X application estate.",
+  "license": "UNLICENSED",
+  "private": false,
+  "type": "module",
+  "sideEffects": false,
+  "files": ["dist"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "jsdom": "^25.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rictux/dilg-region10-auth.git"
+  }
+}
